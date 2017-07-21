@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @question.title %>
+</p>
+
+<p>
+  <strong>Desciption:</strong>
+  <%= @question.desciption %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @question.user.email %>
+</p>
+<% if @question.user.id==current_user.id%>
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<%= link_to 'Back', questions_path %>
