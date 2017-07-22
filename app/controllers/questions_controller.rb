@@ -6,13 +6,13 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
-  
+
+    # byebug
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
-
   end
 
   # GET /questions/new
