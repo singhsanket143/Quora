@@ -15,20 +15,18 @@
   <%= @question.user.email %>
 </p>
 
-<p>
-  <strong>Answers:</strong><br>
-  <% @answers.each do |answer| %>
-    <%if answer.question_id== @question.id%>
-      <%= answer.user.email %>
-      <%= answer.content %>
-      <%if answer.user_id==current_user.id%>
-      <%= link_to 'Edit', edit_answer_path(answer) %> |
-      <%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' },remote: :true %><br>
-      <%end%>
 
-    <%end%>
-  <%end%>
-</p>
+
+  <div id="answer">
+    <% @question.feed.each do |answer| %>
+      <%= render 'ans',answer: answer  %>
+    <% end %>
+  </div>
+
+
+
+
+
 
 <% if @question.user.id==current_user.id%>
 <%= link_to 'Edit', edit_question_path(@question) %> |

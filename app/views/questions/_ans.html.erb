@@ -1,0 +1,9 @@
+<%if answer.question_id== @question.id%>
+  <%= answer.user.email %>
+  <%= answer.content %>
+  <%if answer.user_id==current_user.id%>
+  <%= link_to 'Edit', edit_answer_path(answer) %> |
+  <%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' }%><br>
+  <%end%>
+
+<%end%>

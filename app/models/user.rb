@@ -7,8 +7,7 @@ class User < ActiveRecord::Base
 
 
 def feed
-
- 	Question.all
+ 	Question.all.order(created_at: :desc)
 end
 
 end
