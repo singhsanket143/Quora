@@ -1,6 +1,12 @@
+<%if can? :update,@answer%>
 <h1>Editing Answer</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @answer %> |
+
 <%= link_to 'Back', questions_path %>
+
+<%else%>
+<%= render file: 'public/404', status: 404, formats: [:html] %>
+<%end%>
