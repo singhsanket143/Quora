@@ -1,5 +1,9 @@
 <div class="userDetail">
+  <% if question.anon=="N"%>
   <%= question.user.email %>
+  <%else%>
+  <Anonymous>
+    <%end%>
 </div>
 
 <div class="title">

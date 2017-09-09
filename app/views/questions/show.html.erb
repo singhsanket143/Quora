@@ -12,7 +12,13 @@
 
 <p>
   <strong>User:</strong>
+  <% if @question.anon=="N"%>
   <%= @question.user.email %>
+  <%else%>
+  <p>
+  Anonymous
+  </p>
+    <%end%>
 </p>
 
 
