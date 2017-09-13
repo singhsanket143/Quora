@@ -4,6 +4,7 @@ class Question < ActiveRecord::Base
   validates :title, presence: true, length: {maximum: 140}
   validates :desciption, presence: true, length: {maximum: 600}
 
+  acts_as_likeable
 
 def feed
  	Answer.all.order(created_at: :desc)

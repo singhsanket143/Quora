@@ -28,7 +28,7 @@ gem 'cancancan', '~> 2.0'
 gem 'resque'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'socialization'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

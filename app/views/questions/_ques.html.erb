@@ -2,7 +2,7 @@
   <% if question.anon=="N"%>
   <%= question.user.email %>
   <%else%>
-  <Anonymous>
+
     <%end%>
 </div>
 
@@ -12,6 +12,10 @@
 <div class="desciption">
   <%= question.desciption %>
 </div>
+<div class="other">
+  <%= link_to('like', question_like_path(question), remote:true,method: :post) %>
+</div>
+
 <div class="other">
 <%= link_to 'Show', question %>
 </div>
